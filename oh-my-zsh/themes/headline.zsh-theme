@@ -1,3 +1,6 @@
+#1- make symLink of this file to theme folder in oh-my-zsh folder
+#2- in your .zshrc file set ZSH_THEME="headline"
+
 #!/bin/zsh
 
 # Headline ZSH Prompt
