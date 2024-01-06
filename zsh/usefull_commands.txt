@@ -1,0 +1,23 @@
+
+# the lines that start with "#" and empty lines will ignored
+# the lines that start with "*" will not print thing
+
+
+**remove any orphaned dependencies that were no longer needed after the main package was removed
+apt autoremove 
+
+**command to remove the apps using fzf , one app at the time 
+apt list --installed | awk -F/ '{print $1}' | fzf | xargs -I {}  sudo apt remove  {} -y
+
+**command to purge the apps using fzf , one app at the time 
+apt list --installed | awk -F/ '{print $1}' | fzf | xargs -I {} sudo apt purge  {} --autoremove -y
+
+
+**command to remove the apps using fzf , multi apps , to select app press SHIFT 
+apt list --installed | awk -F/ '{print $1}' | fzf -m| xargs -I {} sudo apt remove  {} -y
+
+**command to list and search all installed packages
+apt list --installed 2>/dev/null | awk -F/ '{print $1}' | fzf | sed -e 's/^[ \t]*//'
+**command to know where bin filles installed 
+which starship
+

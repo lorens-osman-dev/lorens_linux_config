@@ -57,7 +57,7 @@ n(){
 #take you to your home directory. The purpose of the "cd()" function is to cancel this behavior.
 
 function useful_commands() {
-  commands_file="/home/lorens/Files/usefull_commands.txt"
+  commands_file="${HOME}/lorens_linux_config/zsh/usefull_commands.txt"
   header="CommandsList"
 
   fzf_cool=(
