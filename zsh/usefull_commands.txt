@@ -20,4 +20,7 @@ apt list --installed | awk -F/ '{print $1}' | fzf -m| xargs -I {} sudo apt remov
 apt list --installed 2>/dev/null | awk -F/ '{print $1}' | fzf | sed -e 's/^[ \t]*//'
 **command to know where bin filles installed 
 which starship
+**make nested waylans session
+dbus-run-session -- gnome-shell --nested --wayland
+
 

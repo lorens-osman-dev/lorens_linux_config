@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 #1
-#export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,9 +74,9 @@
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #4
-#plugins=(zsh-autosuggestions zsh-syntax-highlighting )
+plugins=(fzf-tab zsh-autosuggestions zsh-syntax-highlighting )
 #5
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -112,8 +112,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #--------[LORENS ZSH]--------#
-source ~/lorens_functions.zsh
+source ~/lorens_linux_config/zsh/lorens_functions.zsh
 # my plugins : plugins=(zsh-autosuggestions zsh-syntax-highlighting )
 
-export STARSHIP_CONFIG=/home/lorens/lorens_linux_config/zsh/starship.toml
+#--------[LORENS STARSHIP]--------#
+#Set Title to the window
+#function set_win_title(){
+#    echo -ne "\033]0; "$USER"@"$HOST":  ${PWD/$HOME/~} \007"
+#}
+function set_win_title(){
+    echo -ne "\033]0; "$USER"@"$HOST" : [ $(basename "$PWD") ] \007"
+}
+precmd_functions+=(set_win_title)
+#export STARSHIP_CONFIG=~/lorens_linux_config/zsh/lorens_starship.toml
+export STARSHIP_CONFIG=~/lorens_linux_config/zsh/theLine.toml
 eval "$(starship init zsh)"
+
