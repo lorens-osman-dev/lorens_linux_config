@@ -1,7 +1,7 @@
 #--------[ LORENS OSMAN ]--------#
 
 
-#--------[ starship:theLine:chain ]
+#--------[ starship_theLine_CHAIN ]
 
 format = """
 $username\

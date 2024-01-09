@@ -124,11 +124,11 @@ function set_win_title(){
     echo -ne "\033]0; "$USER"@"$HOST" : [ $(basename "$PWD") ] \007"
 }
 precmd_functions+=(set_win_title)
-# export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:minimal.toml
-export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine.toml
+#export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:minimal.toml
+export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship_theLine.toml
 #  export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:chain.toml
-#  export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:dashed.toml
-#  export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:heavy.toml
-#  export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:2line.toml
+ # export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:dashed.toml
+# export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:heavy.toml
+# export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:2line.toml
 eval "$(starship init zsh)"
 

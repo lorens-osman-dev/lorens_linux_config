@@ -1,7 +1,7 @@
 #--------[ LORENS OSMAN ]--------#
 
 
-#--------[ starship:theLine:heavy ]
+#--------[ starship_theLine_heavy ]
 
 format = """
 ${custom.user}\

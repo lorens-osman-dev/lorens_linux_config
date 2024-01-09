@@ -1,4 +1,6 @@
-#--------[ LORENS OSMAN : theLine ]--------#
+#--------[ LORENS OSMAN ]--------#
+
+#--------[ theLine_2LINE ]
 # use ubuntuMono Nerd Font Mono 9
 format = """
 ${custom.user}\
@@ -62,7 +64,7 @@ style = "red underline"
 format = "[$output]($style)"
 when = "true"
 
-#--------[COMMANDS]--------#
+#--------[COMMANDS]
 
 [hostname]
 ssh_only = false
@@ -88,7 +90,7 @@ disabled = false
 success_symbol ='[](bold green)'
 error_symbol ='[✖ ](bold red)'
 
-#--------[GIT COMMANDS]--------#
+#--------[GIT COMMANDS]
 
 [git_branch]
 symbol = "  "
