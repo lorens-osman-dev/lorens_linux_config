@@ -1,0 +1,73 @@
+<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <filter id="deepin-image-viewer-a" x="-19.4%" y="-13.6%" width="132.3%" height="132.2%">
+   <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+   <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/>
+   <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+   <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+   <feMerge>
+    <feMergeNode in="shadowMatrixOuter1"/>
+    <feMergeNode in="SourceGraphic"/>
+   </feMerge>
+  </filter>
+  <linearGradient id="deepin-image-viewer-b" x1="25.185" x2="25.185" y2="50.37" gradientTransform="scale(1.0746 .93062)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#FFF" offset="0"/>
+   <stop stop-color="#D6D9ED" offset="1"/>
+  </linearGradient>
+  <linearGradient id="deepin-image-viewer-d" x1="20.46" x2="20.46" y1="40.834" y2=".90005" gradientTransform="scale(1.2065 .82887)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#4B7BCF" offset="0"/>
+   <stop stop-color="#3A2EC8" offset="1"/>
+  </linearGradient>
+  <rect id="deepin-image-viewer-c" x=".122" y=".096" width="49.125" height="33.75" rx="4"/>
+  <linearGradient id="deepin-image-viewer-f" x1="16.043" x2="13.149" y1="24.263" y2="35.498" gradientTransform="scale(1.3319 .7508)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#40E2E8" offset="0"/>
+   <stop stop-color="#2A7ECA" offset=".47667"/>
+   <stop stop-color="#332075" offset="1"/>
+  </linearGradient>
+  <linearGradient id="deepin-image-viewer-g" x1="25.647" x2="25.647" y1="22.564" y2="49.206" gradientTransform="scale(1.3197 .75777)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#67CEFF" stop-opacity=".8" offset="0"/>
+   <stop stop-color="#00CDFF" offset="1"/>
+  </linearGradient>
+  <filter id="deepin-image-viewer-h" x="-18.2%" y="-17.6%" width="133.3%" height="129.4%">
+   <feOffset dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+   <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+   <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.0924666824   0 0 0 0 0.218528561   0 0 0 0 0.62647192  0 0 0 0.302474869 0"/>
+   <feMerge>
+    <feMergeNode in="shadowMatrixOuter1"/>
+    <feMergeNode in="SourceGraphic"/>
+   </feMerge>
+  </filter>
+  <circle id="deepin-image-viewer-i" cx="12.51" cy="12.5" r="12.5"/>
+  <radialGradient id="deepin-image-viewer-u" cx="16.25" cy="16.375" r="13.927" gradientTransform="translate(2,26.125)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#01001F" stop-opacity=".036" offset="0"/>
+   <stop stop-color="#000636" stop-opacity=".219" offset=".81152"/>
+   <stop stop-color="#01003C" stop-opacity=".688" offset="1"/>
+  </radialGradient>
+  <circle id="deepin-image-viewer-t" cx="16.25" cy="16.375" r="12.5"/>
+  <filter id="deepin-image-viewer-s" x="-30%" y="-30%" width="160%" height="160%">
+   <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+   <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+   <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+   <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.279134909   0 0 0 0 0.446591113   0 0 0 0 1  0 0 0 1 0"/>
+  </filter>
+  <radialGradient id="deepin-image-viewer-v" cx="11.024" cy="21.154" r="13.29" gradientTransform="scale(1.0523 .95033)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#C0A8FF" stop-opacity=".515" offset=".00037"/>
+   <stop stop-color="#B385FF" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <mask id="deepin-image-viewer-e" fill="#fff">
+   <use width="100%" height="100%" xlink:href="#deepin-image-viewer-c"/>
+  </mask>
+ </defs>
+ <rect transform="rotate(-8,76.434,-1.8513)" width="54.125" height="46.875" rx="6" fill="url(#deepin-image-viewer-b)" fill-rule="evenodd" filter="url(#deepin-image-viewer-a)"/>
+ <use transform="rotate(-8,92.434,-20.057)" width="100%" height="100%" fill="url(#deepin-image-viewer-d)" fill-rule="evenodd" filter="url(#deepin-image-viewer-a)" xlink:href="#deepin-image-viewer-c"/>
+ <circle transform="rotate(-8,92.434,-20.057)" cx="41.162" cy="6.607" r="2.5" fill="#fff5d0" fill-rule="evenodd" filter="url(#deepin-image-viewer-a)" mask="url(#deepin-image-viewer-e)"/>
+ <path transform="rotate(-8,92.434,-20.057)" d="m-1.2513 34.633 19.551-23.996c1.7439-2.1403 4.5696-2.1425 6.3152 0l19.551 23.996z" fill="url(#deepin-image-viewer-f)" fill-rule="evenodd" filter="url(#deepin-image-viewer-a)" mask="url(#deepin-image-viewer-e)"/>
+ <path transform="rotate(-8,92.434,-20.057)" d="m13.888 37.287 16.849-21.291c1.7161-2.1685 4.4947-2.1731 6.2145 0l16.849 21.291z" fill="url(#deepin-image-viewer-g)" fill-opacity=".65" fill-rule="evenodd" filter="url(#deepin-image-viewer-a)" mask="url(#deepin-image-viewer-e)" style="mix-blend-mode:soft-light"/>
+ <g fill-rule="evenodd">
+  <circle cx="18.25" cy="42.25" r="15.875" fill="#fff" filter="url(#deepin-image-viewer-h)"/>
+  <use transform="translate(5.75,30)" width="100%" height="100%" fill="#ffffff" fill-opacity=".188" filter="url(#deepin-image-viewer-h)" xlink:href="#deepin-image-viewer-i"/>
+  <use transform="translate(2,26.125)" width="100%" height="100%" fill="#000000" filter="url(#deepin-image-viewer-s)" xlink:href="#deepin-image-viewer-t"/>
+  <circle cx="18.25" cy="42.5" r="12" fill="url(#deepin-image-viewer-u)" filter="url(#deepin-image-viewer-h)" stroke="#000" stroke-linejoin="square" stroke-opacity=".3"/>
+  <path transform="rotate(168,16.689,27.121)" d="m9.6462 5.5829c-0.13028-0.21855-0.03936 0.067983-0.18082 0.27847-3.1309 4.6586-1.9422 10.824 2.4664 14.282 4.4086 3.4576 10.708 2.8612 14.485-1.2101-2.2834-0.65114-4.427-1.5934-6.4111-2.7817-4.2466-2.5433-7.7632-6.2135-10.359-10.568z" fill="url(#deepin-image-viewer-v)" filter="url(#deepin-image-viewer-h)" style="mix-blend-mode:lighten"/>
+ </g>
+</svg>

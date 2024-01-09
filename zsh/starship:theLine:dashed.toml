@@ -1,9 +1,12 @@
-#--------[ LORENS OSMAN : theLıne ]--------#
+#--------[ LORENS OSMAN ]--------#
+
+
+#--------[ starship:theLine:dashed ]
 
 format = """${custom.user}\
 [---](#eddf31 bold)\
 ${custom.host}\
-[--](fg:#4b494f)\
+[--](fg:#4b494f bold)\
 ${custom.dir}\
 $fill\
 $git_branch\
@@ -18,7 +21,7 @@ $character
 """
 
 
-#--------[CUSTUM COMMANDS]--------#
+#--------[CUSTOM COMMANDS]
 
 [custom.directory]
 description = "Replace the default directory command"
@@ -28,28 +31,28 @@ format = "[  󰉋 $output]($style)"
 when = "true"
 
 [custom.dir]
-description = "Dashes of directory "
+description = "Dashes above directory "
 command = """printf '%*s' "$(echo $(( $(pwd | sed "s|$HOME|~|" | wc -c) + 1 )))" '' | tr ' ' '-'"""
 style = "fg:#33dd2d"
 format = "[$output]($style)"
 when = "true"
 
 [custom.user]
-description = "Dashes of username"
+description = "Dashes above username"
 command = """printf '%*s' "$(echo $(echo $USER | tr -d '\n' | wc -c)+ 2)" '' | tr ' ' '-'"""
 style = "#313fed bold"
 format = "[$output]($style)"
 when = "true"
 
 [custom.host]
-description = "Dashes of hostname"
+description = "Dashes above hostname"
 command = """printf '%*s' "$(echo $(echo $HOST | tr -d '\n' | wc -c))" '' | tr ' ' '-'"""
 style = "red bold"
 format = "[$output]($style)"
 when = "true"
 
 
-#--------[COMMANDS]--------#
+#--------[COMMANDS]
 
 [hostname]
 ssh_only = false
@@ -66,7 +69,7 @@ show_always = true
 
 [fill]
 symbol="-"
-style = "fg:#4b494f"
+style = "fg:#4b494f bold"
 
 [line_break]
 disabled = false
@@ -75,7 +78,7 @@ disabled = false
 success_symbol ='[➜ ](bold green)'
 error_symbol ='[✖ ](bold red)'
 
-#--------[GIT COMMANDS]--------#
+#--------[GIT COMMANDS]
 
 [git_branch]
 symbol = " "
