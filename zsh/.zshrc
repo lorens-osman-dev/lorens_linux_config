@@ -124,11 +124,18 @@ function set_win_title(){
     echo -ne "\033]0; "$USER"@"$HOST" : [ $(basename "$PWD") ] \007"
 }
 precmd_functions+=(set_win_title)
-#export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:minimal.toml
-export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship_theLine.toml
-#  export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:chain.toml
- # export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:dashed.toml
-# export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:heavy.toml
-# export STARSHIP_CONFIG=~/lorens_linux_config/zsh/starship:theLine:2line.toml
+#export STARSHIP_CONFIG=~/lorens_linux_config/starship/starship:theLine:minimal.toml
+export STARSHIP_CONFIG=~/lorens_linux_config/starship/starship_theLine.toml
+#  export STARSHIP_CONFIG=~/lorens_linux_config/starship/starship:theLine:chain.toml
+ # export STARSHIP_CONFIG=~/lorens_linux_config/starship/starship:theLine:dashed.toml
+# export STARSHIP_CONFIG=~/lorens_linux_config/starship/starship:theLine:heavy.toml
+# export STARSHIP_CONFIG=~/lorens_linux_config/starship/starship:theLine:2line.toml
 eval "$(starship init zsh)"
 
+
+# bun completions
+[ -s "/home/lorens/.bun/_bun" ] && source "/home/lorens/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

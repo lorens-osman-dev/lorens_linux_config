@@ -22,5 +22,7 @@ apt list --installed 2>/dev/null | awk -F/ '{print $1}' | fzf | sed -e 's/^[ \t]
 which starship
 **make nested waylans session
 dbus-run-session -- gnome-shell --nested --wayland
+**install .deb file 
+sudo apt install ./path
 
 
