@@ -1,10 +1,10 @@
 
 # the lines that start with "#" and empty lines will ignored
-# the lines that start with "*" will not print thing
+# the lines that start with "**" is command's explanation and must be before the actual command 
 
 
 **remove any orphaned dependencies that were no longer needed after the main package was removed
-apt autoremove 
+sudo apt autoremove 
 
 **command to remove the apps using fzf , one app at the time 
 apt list --installed | awk -F/ '{print $1}' | fzf | xargs -I {}  sudo apt remove  {} -y
@@ -22,7 +22,9 @@ apt list --installed 2>/dev/null | awk -F/ '{print $1}' | fzf | sed -e 's/^[ \t]
 which starship
 **make nested waylans session
 dbus-run-session -- gnome-shell --nested --wayland
-**install .deb file 
+*****#**install .deb file 
 sudo apt install ./path
+**completely ignore all current changes and go back to last commit
+git reset --hard HEAD
 
 

@@ -52,38 +52,34 @@ n(){
     gnome-text-editor   $1
 }
 
-#--------|[ Usful Commands ]|--------#
-#When you use the "cd" command without any additional information, it will automatically 
-#take you to your home directory. The purpose of the "cd()" function is to cancel this behavior.
-
+#--------|[ Useful Commands ]|--------#
 function useful_commands() {
-  commands_file="${HOME}/lorens_linux_config/zsh/usefull_commands.txt"
-  header="CommandsList"
+    # You need to export $commands_file so it can be accessible inside the preview shell
+    # Or use the full path instead of the variable
+    declare -x commands_file="${HOME}/lorens_linux_config/zsh/usefull_commands.txt"
+    header="CommandsList"
+    fzf_cool=(
+        --reverse
+        --pointer="➜"
+        --info=inline-right 
+        --height 40%
+        --no-separator
+        --preview-window=down,20%,wrap
+        --color='dark,hl:red:regular,fg+:white:regular,hl+:red:regular:reverse,query:white:regular,info:#cb4b16,prompt:#dd4814:bold,pointer:#dd4814:bold'
+    )
 
-  fzf_cool=(
-    --border-label="$header"
-    --prompt="down Arrow:down, upArrow:up, ESC: dismiss, Enter: print_command"
-    --reverse
-    --border=sharp
-    --pointer="➜"
-    --disabled
-    --no-info
-    --height 40%
-    --no-separator
-    --color=dark,hl:red:regular,fg+:white:regular,hl+:red:regular:reverse,query:white:regular,info:#cb4b16,prompt:#dd4814:bold,pointer:#dd4814:bold
-  )
-
-  if [[ $1 = "file" ]]; then
-    echo "Commands List file path is: $commands_file" && gnome-text-editor -i $commands_file
-  elif [[ $1 = "add" ]]; then
-    echo "Commands List file path is: $commands_file" && gnome-text-editor $commands_file
-  elif [[ -z $1 ]]; then
-    selected_command=$(cat $commands_file | grep -v '^$' | grep -v '^#'| sed -e 's/^[ \t]*//' | fzf $fzf_cool | awk '!/^[\*]/')
-     print -z $selected_command
-  fi
+    case "$1" in
+        file) echo "Commands List file path is: $commands_file" && gnome-text-editor -i "$commands_file" ;;
+        add)  echo "Commands List file path is: $commands_file" && gnome-text-editor "$commands_file" ;;
+        *)
+            selected_command=$(grep -v '^$' "$commands_file"| grep -v '^#'| sed -e 's/^[ \t]*//' | grep -v '^\*\*'  | fzf "${fzf_cool[@]}" \
+                --preview 'grep -xF -B1 {} "${commands_file}" | sed "s/^**//"| head -1' )
+            print -z $selected_command
+        ;;
+    esac
 }
-
 alias uc="useful_commands"
+
 
 #--------|[ neat_explorer ]|--------#
 #When you use the "cd" command without any additional information, it will automatically 
@@ -140,4 +136,13 @@ alias cd="neat_explorer"
 
 
 
-
+#--------|[ save MAN pages to file.txt ]|--------#
+manp() {
+  if [ -z "$1" ]; then
+    echo "The \033[1mmanp\033[0m function is a function that saves command's manual pages to a Documents directory."
+  else
+    declare -x TXT_FILE_PATH="${HOME}/Documents/${1}.txt"
+    echo "The \033[1m${1}\033[0m command's manual pages created in : ${TXT_FILE_PATH}"
+    man "$1" > "$TXT_FILE_PATH"
+  fi
+}
