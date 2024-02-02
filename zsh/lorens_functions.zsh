@@ -1,7 +1,7 @@
 #########---------------LORENS ZSH
 
 z(){
-    n ~/.lorens_bash/lorens.zsh
+    n /home/lorens/lorens_linux_config/zsh/.zshrc
 }
 bn(){
     if [ -z $1  ]; then
@@ -17,7 +17,7 @@ cdl(){
         cd $1 && exa --tree --level=1 --group-directories-first --icons 
     fi
 }
-#like cd() function but show hidden foldres and files
+#like cdl() function but show hidden folders and files
 cdla(){
     if [ -z $1  ]; then
         exa --tree --level=1 --group-directories-first --icons -a
@@ -28,7 +28,7 @@ cdla(){
 re(){
     source ~/.zshrc
 
-    echo reloded
+    echo "\033[32mReloaded ✓✓ \033[0m"
     
      
 }
@@ -49,7 +49,11 @@ e(){
 #--------|[ n() function ]|--------#
 n(){
     
-    gnome-text-editor   $1
+    if [ -z $1  ]; then
+        echo "There is no file to open"
+    else
+        gnome-text-editor   $1
+    fi
 }
 
 #--------|[ Useful Commands ]|--------#
@@ -73,7 +77,8 @@ function useful_commands() {
         add)  echo "Commands List file path is: $commands_file" && gnome-text-editor "$commands_file" ;;
         *)
             selected_command=$(grep -v '^$' "$commands_file"| grep -v '^#'| sed -e 's/^[ \t]*//' | grep -v '^\*\*'  | fzf "${fzf_cool[@]}" \
-                --preview 'grep -xF -B1 {} "${commands_file}" | sed "s/^**//"| head -1' )
+                --preview fzf --preview 'echo -e "\033[32m$(grep -xF -B1 {} "${commands_file}" | sed "s/^**//"| head -1)\033[0m"')
+		# the original --preview is :--preview 'grep -xF -B1 {} "${commands_file}" | sed "s/^**//"| head -1' )
             print -z $selected_command
         ;;
     esac
@@ -85,7 +90,10 @@ alias uc="useful_commands"
 #When you use the "cd" command without any additional information, it will automatically 
 #take you to your home directory. The purpose of the "cd()" function is to cancel this behavior.
 #Note cd() invoked in neat_explorer()
-cd() {
+#Note before cd() was not function word , we added it to test,  
+#when we add it the reload works perfectly but neat_explorer() doesn't work after reload , if we remove it reload doesn't works but
+# neat_explorer() works
+function cd() {
   [[ $# -eq 0 ]] && return
   builtin cd "$@"
 }
@@ -134,15 +142,15 @@ function neat_explorer() {
 
 alias cd="neat_explorer"
 
-
-
 #--------|[ save MAN pages to file.txt ]|--------#
 manp() {
   if [ -z "$1" ]; then
-    echo "The \033[1mmanp\033[0m function is a function that saves command's manual pages to a Documents directory."
+
+    echo "\033[32mThe \033[1mmanp\033[0m \033[32mfunction is a function that saves command's manual pages to a Documents directory.\033[0m"
+
   else
     declare -x TXT_FILE_PATH="${HOME}/Documents/${1}.txt"
-    echo "The \033[1m${1}\033[0m command's manual pages created in : ${TXT_FILE_PATH}"
+    echo "\033[32mThe \033[1m${1}\033[0m \033[32mcommand's manual pages created in : ${TXT_FILE_PATH}\033[0m"
     man "$1" > "$TXT_FILE_PATH"
   fi
 }

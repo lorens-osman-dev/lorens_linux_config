@@ -2,6 +2,8 @@
 # the lines that start with "#" and empty lines will ignored
 # the lines that start with "**" is command's explanation and must be before the actual command 
 
+**Search all apt installed package 
+apt list --installed | awk -F/ '{print $1}' | fzf 
 
 **remove any orphaned dependencies that were no longer needed after the main package was removed
 sudo apt autoremove 
